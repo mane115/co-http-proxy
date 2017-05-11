@@ -39,9 +39,9 @@ app.use(bodyParse.json())
 代理转发的前置函数（代理请求前钩子），请返回Promise使中间件正确获取完成状态
 
 |params|type|todo|
-|:--|:----|:----|:---|
-|httpOption|Object|发起转发请求的option，详情参考request
-|ctx|Object|koa的ctx对象
+|:--|:----|:----|
+|httpOption|Object|发起转发请求的option，详情参考request|
+|ctx|Object|koa的ctx对象|
 
 
 ### option.onRes
@@ -49,9 +49,9 @@ app.use(bodyParse.json())
 代理转发的后置函数（代理响应后钩子），请返回Promise使中间件正确获取完成状态
 
 |params|type|todo|
-|:--|:----|:----|:---|
+|:--|:----|:----|
 |data|Object/String|代理返回的数据 如能被json解析则返回解析后的object,其他则返回string
-|ctx|Object|koa的ctx对象
+|ctx|Object|koa的ctx对象|
 
 
 ### option.oneErr
@@ -59,7 +59,7 @@ app.use(bodyParse.json())
 代理转发的错误函数（代理报错时钩子），请返回Promise使中间件正确获取完成状态
 
 |params|type|todo|
-|:--|:----|:----|:---|
+|:--|:----|:----|
 |error|Error|http转发发生的错误
-|ctx|Object|koa的ctx对象
+|ctx|Object|koa的ctx对象|
 |next|Function|koa的next方法，如不掉用next方法则请求会停留在代理中间件中
